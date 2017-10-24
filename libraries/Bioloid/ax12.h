@@ -135,7 +135,7 @@
 #define ERR_RANGE                   4
 #define ERR_CHECKSUM                5
 //#define ERR_OVERLOAD                32
-//#define ERR_INSTRUCTION             2
+#define ERR_INSTRUCTION             2
 
 /** AX-S1 **/
 #define AX_LEFT_IR_DATA             26
