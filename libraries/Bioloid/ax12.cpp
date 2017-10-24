@@ -191,16 +191,18 @@ void ax12Init(long baud){
 int ax12GetRegister(int id, int regstart, int length){  
     setTX(id);
     // 0xFF 0xFF ID LENGTH INSTRUCTION PARAM... CHECKSUM    
-    int checksum = ~((id + 6 + regstart + length)%256);
+    //int checksum = ~((id + 6 + regstart + length)%256);
+    ax12writeB(0xFF);   // Header, don't change this
     ax12writeB(0xFF);
-    ax12writeB(0xFF);
-    ax12writeB(id);
-    ax12writeB(4);    // length
-    ax12writeB(AX_READ_DATA);
-    ax12writeB(regstart);
-    ax12writeB(length);
+    ax12writeB(0xFD);
+    ax12writeB(00);     // Reserved in 2.0, don't change
+    ax12writeB(id);     // id of the servo
+    ax12writeB(4);      // length, first byte
+    ax12writeB(0);      // length, 2nd byte (usually 0)
+    ax12writeB(AX_READ_DATA); //Instruction. 2
+    //ax12writeB(regstart); // We don't know what this is
     ax12writeB(checksum);  
-    setRX(id);    
+    setRX(id);
     if(ax12ReadPacket(length + 6) > 0){
         ax12Error = ax_rx_buffer[4];
         if(length == 1)
