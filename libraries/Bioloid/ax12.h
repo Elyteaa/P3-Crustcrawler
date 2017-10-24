@@ -129,13 +129,13 @@
 
 /** Error Levels **/
 #define ERR_NONE                    0
-#define ERR_VOLTAGE                 1
-#define ERR_ANGLE_LIMIT             2
-#define ERR_OVERHEATING             4
-#define ERR_RANGE                   8
-#define ERR_CHECKSUM                16
-#define ERR_OVERLOAD                32
-#define ERR_INSTRUCTION             64
+//#define ERR_VOLTAGE                 1
+//#define ERR_ANGLE_LIMIT             2
+//#define ERR_OVERHEATING             4
+#define ERR_RANGE                   4
+#define ERR_CHECKSUM                5
+//#define ERR_OVERLOAD                32
+//#define ERR_INSTRUCTION             2
 
 /** AX-S1 **/
 #define AX_LEFT_IR_DATA             26
