@@ -51,7 +51,7 @@
 //#define MX_TORQUE_LIMIT_H               35
 #define MX_PRESENT_POSITION             132
 //#define MX_PRESENT_POSITION_H           37
-#define MX_PRESENT_SPEED                128
+#define MX_PRESENT_SPEED_L              128
 //#define MX_PRESENT_SPEED_H              39
 //#define MX_PRESENT_LOAD                 40
 //#define MX_PRESENT_LOAD_H               41
@@ -83,7 +83,7 @@ float GetCurrent(int id);
 float GetSpeed(int id);
 
 // Set the torque setpoint.
-void SetTorque(int id, float torque);
+//void SetTorque(int id, float torque);
 
 #define GetLowerAngleLimit(id) (ax12GetRegister(id, MX_CW_ANGLE_LIMIT_L, 2))
 #define GetUpperAngleLimit(id) (ax12GetRegister(id, MX_CCW_ANGLE_LIMIT_L, 2))

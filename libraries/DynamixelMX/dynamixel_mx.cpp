@@ -11,13 +11,13 @@
 void SetPidGains(int id, float p_gain, float i_gain, float d_gain)
 {
     char p = (char)(p_gain * 8);
-    ax12SetRegister(id, MX_P_GAIN, p);
+    ax12SetRegister(id, MX_POSITION_P_GAIN, p);
 
     char i = (char)(i_gain * 2.048);
-    ax12SetRegister(id, MX_I_GAIN, i);
+    ax12SetRegister(id, MX_POSITION_I_GAIN, i);
 
     char d = (char)(d_gain * 250);
-    ax12SetRegister(id, MX_D_GAIN, d);
+    ax12SetRegister(id, MX_POSITION_D_GAIN, d);
 }
 
 // Get the voltage supplied to an MX servo.
@@ -69,8 +69,8 @@ float GetSpeed(int id)
 // Parameters:
 // id: ID of the servo to control
 // torque: The current to apply to the servo in mA. Negative
-//         currents moves clockwise. Range is [-4600, 4600].
-void SetTorque(int id, float torque)
+//         currents move clockwise. Range is [-4600, 4600].
+/*void SetTorque(int id, float torque)
 {
     int torque_code = abs(torque) / 4.5;
     if (torque < 0) { // counter-clockwise
@@ -78,3 +78,4 @@ void SetTorque(int id, float torque)
     }
     ax12SetRegister2(id, MX_GOAL_TORQUE_L, torque_code);
 }
+*/
