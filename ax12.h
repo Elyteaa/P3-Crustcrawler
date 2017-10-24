@@ -86,13 +86,13 @@
 #define AX_POSITION_D_GAIN              80
 #define AX_POSITION_I_GAIN              82
 #define AX_POSITION_P_GAIN              84
-#define AX_GOAL_POSITION                116
+#define AX_GOAL_POSITION_L              116
 //#define MX_GOAL_POSITION_H              31
-#define AX_GOAL_SPEED                   104
+#define AX_GOAL_SPEED_L                 104
 //#define MX_GOAL_SPEED_H                 33
 //#define MX_TORQUE_LIMIT_L               34
 //#define MX_TORQUE_LIMIT_H               35
-#define AX_PRESENT_POSITION             132
+#define AX_PRESENT_POSITION_L           132
 //#define MX_PRESENT_POSITION_H           37
 #define AX_PRESENT_SPEED                128
 //#define MX_PRESENT_SPEED_H              39
